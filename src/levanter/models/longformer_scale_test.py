@@ -2,11 +2,10 @@ import time
 
 import jax
 import numpy as np
-from jax.sharding import Mesh
+from jax.experimental.maps import Mesh
 
 import haliax as hax
 from haliax.partitioning import named_jit
-
 from levanter.models.longformer import causal_sliding_window_attention
 
 

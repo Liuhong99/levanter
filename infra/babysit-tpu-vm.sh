@@ -84,6 +84,11 @@ while true; do
   else
     echo "VM $VM_NAME not found, creating it"
     bash "$SCRIPT_DIR"/spin-up-vm.sh "${CREATION_ARGS[@]}"
+    # added for hong's use case
+    gcloud compute tpus tpu-vm ssh hong-256 --zone europe-west4-a  --worker=all --command 'source venv310/bin/activate ; pip install  pydantic==1.10 ray==2.4'
+    gcloud compute tpus tpu-vm scp src/levanter/optim.py    hong@hong-256:/home/hong/levanter/src/levanter --zone europe-west4-a --worker=all
+    gcloud compute tpus tpu-vm scp src/levanter/config.py    hong@hong-256:/home/hong/levanter/src/levanter --zone europe-west4-a --worker=all
+    gcloud compute tpus tpu-vm scp config/gpt2_7b_pile.yaml   hong@hong-256:/home/hong/levanter/config --zone europe-west4-a --worker=all
   fi
   echo "Sleeping for 10s"
   sleep 10

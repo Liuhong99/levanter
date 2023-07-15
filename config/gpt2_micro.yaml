@@ -1,7 +1,6 @@
 data:
   id: dlwh/wikitext_103_detokenized
 model:
-  type: gpt2
   hidden_dim: 128
   num_heads: 8
   num_layers: 4
