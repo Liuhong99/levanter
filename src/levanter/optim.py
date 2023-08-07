@@ -19,7 +19,7 @@ from levanter.config import TrainerConfig
 from levanter.logging import jittable_wandb_log
 from levanter.utils.jax_utils import parameter_count
 
-GAMMA_SOFIA_G=70
+GAMMA_SOFIA_G=60
 GAMMA_SOFIA_H=0.1
 
 
